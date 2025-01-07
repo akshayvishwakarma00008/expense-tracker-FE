@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import DashboardData from "../../components/Dashboard/DashboardData";
-import LoadingComponent from "../../components/Loading/Loading";
-import { fetchAccountStatsAction } from "../../redux/slices/accountStats/accountStatsSlices";
+import LoadingComponent from "../../components/LoadingComponent";
+import { fetchAccountStatsAction } from "../../redux/slices/accountStats/accountStatsSlice";
 
 const Dashboard = () => {
   const dispatch = useDispatch();

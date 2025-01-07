@@ -11,6 +11,9 @@ import AddIncome from './pages/income/AddIncome';
 import UserProfileExpList from './pages/users/Profile/UserProfileExpList';
 import EditContent from './components/EditContent/EditContent';
 import UpdateProfile from './pages/users/Profile/UpdateProfile';
+import UserProfileIncList from './pages/users/Profile/UserProfileIncomeList';
+import AdminRoute from './components/Navigation/AdminRoute';
+import Dashboard from './pages/Dashboard/Dashbord';
 
 function App() {
   return (
@@ -20,11 +23,18 @@ function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/not-admin" element={<NotAdmin />} />
       <Route
+        path="/dashboard"
+        element={
+          <AdminRoute>
+            <Dashboard />
+          </AdminRoute>
+        }
+      />
+      <Route
         path="/add-income"
         element={
           <ProtectedRoute>
             <AddIncome />
-            <UserProfileExpList />
           </ProtectedRoute>
         }
       />
@@ -33,6 +43,14 @@ function App() {
         element={
           <ProtectedRoute>
             <UserProfileExpList />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/user-profile-income"
+        element={
+          <ProtectedRoute>
+            <UserProfileIncList />
           </ProtectedRoute>
         }
       />

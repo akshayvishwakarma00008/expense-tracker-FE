@@ -1,5 +1,5 @@
 import useCurrencyFormatter from "../../hooks/useCurrencyFormatter";
-import DataGrap from "./DataGrap";
+import DataGrap from "./DataGraph";
 
 const DashboardData = ({
   avgExp,

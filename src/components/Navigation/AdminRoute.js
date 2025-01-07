@@ -1,23 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Route, Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
-const AdminRoute = ({ component: Component, ...rest }) => {
-    //check if user is loggin
-    const user = useSelector(state => state?.users);
+const AdminRoute = ({ children }) => {
+    // Check if user is logged in
+    const user = useSelector((state) => state?.users);
     const { userAuth } = user;
-    return (
-        <Route
-            {...rest}
-            render={() =>
-                userAuth?.isAdmin ? (
-                    <Component {...rest} />
-                ) : (
-                    <Redirect to="/not-admin" />
-                )
-            }
-        />
-    );
+
+    // Check if the user is an admin
+    return userAuth?.isAdmin ? children : <Navigate to="/not-admin" />;
 };
 
 export default AdminRoute;

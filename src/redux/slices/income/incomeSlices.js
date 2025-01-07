@@ -22,7 +22,7 @@ export const addNewIncomeAction = createAsyncThunk(
         //http call
         try {
             const { data } = await axios.post(
-                `${baseURL}/api/incomes`,
+                `${baseURL}/income`,
                 {
                     title: income?.title,
                     description: income?.description,
@@ -57,7 +57,7 @@ export const fetchIncomesAction = createAsyncThunk(
         //http call
         try {
             const { data } = await axios.get(
-                `${baseURL}/api/incomes?page=${page}`,
+                `${baseURL}/income?page=${page}`,
                 config
             );
             return data;
@@ -84,7 +84,7 @@ export const fetchIncomeAction = createAsyncThunk(
         };
         //http call
         try {
-            const { data } = await axios.get(`${baseURL}/api/incomes/${id}`, config);
+            const { data } = await axios.get(`${baseURL}/income/${id}`, config);
             return data;
         } catch (error) {
             if (!error.response) {
@@ -110,7 +110,7 @@ export const deleteIncomeAction = createAsyncThunk(
         //http call
         try {
             const { data } = await axios.delete(
-                `${baseURL}/api/incomes/${id}`,
+                `${baseURL}/income/${id}`,
                 config
             );
             //dispatch
@@ -141,7 +141,7 @@ export const updateIncomeAction = createAsyncThunk(
         //http call
         try {
             const { data } = await axios.put(
-                `${baseURL}/api/incomes/${income?.id}`,
+                `${baseURL}/income/${income?.id}`,
                 {
                     title: income?.title,
                     description: income?.description,
