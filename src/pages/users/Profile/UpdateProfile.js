@@ -67,7 +67,6 @@ const UpdateProfile = () => {
                                         <ErrorDisplayMessage
                                             error={{
                                                 userAppErr,
-                                                userServerErr,
                                             }}
                                         />
                                     ) : null}
