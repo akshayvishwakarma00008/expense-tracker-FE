@@ -14,7 +14,8 @@ import UpdateProfile from './pages/users/Profile/UpdateProfile';
 import UserProfileIncList from './pages/users/Profile/UserProfileIncomeList';
 import AdminRoute from './components/Navigation/AdminRoute';
 import Dashboard from './pages/Dashboard/Dashbord';
-
+import ExpensesList from './pages/expenses/ExpensesList';
+import IncomeList from './pages/income/IncomeList';
 function App() {
   return (
     <Routes>
@@ -83,6 +84,22 @@ function App() {
         element={
           <ProtectedRoute>
             <UpdateProfile />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/expenses"
+        element={
+          <ProtectedRoute>
+            <ExpensesList />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/incomes"
+        element={
+          <ProtectedRoute>
+            <IncomeList />
           </ProtectedRoute>
         }
       />

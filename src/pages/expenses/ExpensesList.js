@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ContentDetails from "../../components/ContentDetails/ContentDetails";
 import ErrorDisplayMessage from "../../components/ErrorDisplayMessage";
-import LoadingComponent from "../../components/Loading/Loading";
+import LoadingComponent from "../../components/LoadingComponent";
 
 import AppPagination from "../../components/Pagination/AppPagination";
 import { fetchExpensesAction } from "../../redux/slices/expenses/expenseAction";
@@ -20,7 +20,6 @@ const ExpensesList = () => {
   //expenses
   const expenses = useSelector(state => state.expenses);
   const { expLoading, expenseList, expAppErr, expServerErr } = expenses;
-  console.log({ expLoading, expenseList, expAppErr, expServerErr });
 //   const totalExp = calTransaction(expenseList?.docs ? expenseList?.docs : []);
 
   //user Expenses

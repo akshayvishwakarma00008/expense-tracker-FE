@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ContentDetails from "../../components/ContentDetails/ContentDetails";
 import ErrorDisplayMessage from "../../components/ErrorDisplayMessage";
 
-import LoadingComponent from "../../components/Loading/Loading";
+import LoadingComponent from "../../components/LoadingComponent";
 import AppPagination from "../../components/Pagination/AppPagination";
 import { fetchIncomesAction } from "../../redux/slices/income/incomeSlices";
 
-const IncomeList = ({ location: { state } }) => {
+const IncomeList = () => {
+  const { state } = useLocation();
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
   //hide some table tabs to display user income information
@@ -20,15 +21,6 @@ const IncomeList = ({ location: { state } }) => {
   const income = useSelector(state => state?.income);
   const { incLoading, incomeList, incAppErr, incServerErr } = income;
 
-  const navigate = useNavigate();
-  // const navigate = expense => {
-  //   history.push({
-  //     pathname: "/edit",
-  //     state: {
-  //       data,
-  //     },
-  //   });
-  // };
   return (
     <>
       {incLoading ? (

@@ -7,7 +7,7 @@ const Navbar = () => {
   const users = useSelector(state => state?.users);
 
   const { userAuth } = users;
-  return <>{userAuth ? <PrivateNavbar /> : <PublicNavbar />}</>;
+  return <>{userAuth ? <PrivateNavbar /> : <PublicNavbar/>}</>;
 };
 
 export default Navbar;
