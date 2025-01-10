@@ -49,7 +49,7 @@ const ProfileDesign = ({ profileData }) => {
                           style={{ flex: "1 1 45%" }}
                         >
                           <div>
-                            <FcCalendar />
+                            <FcCalendar size="2rem"/>
                           </div>
                           <div>{useDateFormatter(profileData?.createdAt)}</div>
                         </div>
@@ -58,7 +58,7 @@ const ProfileDesign = ({ profileData }) => {
                           style={{ flex: "1 1 45%" }}
                         >
                           <div>
-                            <FcVoicemail />
+                            <FcVoicemail size="2rem"/>
                           </div>
                           <div>{profileData?.email}</div>
                         </div>

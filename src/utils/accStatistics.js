@@ -5,7 +5,7 @@ const calTransaction = arr => {
     .reduce((acc, curr) => {
       return acc + curr;
     }, 0) : 0;
-  const avg = arr?.length > 0 ?sum / arr?.length : 0;
+  const avg = arr?.length > 0 ?Math.round((sum / arr?.length*100))/100 : 0;
   const min = tranArr ? Math.min(...tranArr) : 0;
   const max = tranArr ? Math.max(...tranArr) : 0;
   return {
