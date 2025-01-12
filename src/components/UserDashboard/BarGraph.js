@@ -35,7 +35,7 @@ const BarGraph = () => {
     }, []);
 
     const Data = useSelector((state) => state?.userStat);
-    const { loading, statExpData, statIncData, appErr, serverErr } = Data;
+    const { loading, statExpData, statIncData} = Data;
 
     const expensesByMonth = Array(12).fill(0);
     const IncomeByMonth = Array(12).fill(0);
