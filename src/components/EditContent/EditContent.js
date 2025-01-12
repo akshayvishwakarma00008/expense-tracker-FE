@@ -69,14 +69,14 @@ const EditContent = () => {
     return (
         <section className="py-5 bg-secondary vh-100">
             <div className="container text-center">
-                <a className="d-inline-block mb-5">
+                <span className="d-inline-block mb-5">
                     <img
                         className="img-fluid"
                         src={moneySVG}
                         alt="SVGeXPENSES"
                         width="200"
                     />
-                </a>
+                </span>
                 <div className="row mb-4">
                     <div className="col-12 col-md-8 col-lg-5 mx-auto">
                         <div className="p-4 shadow-sm rounded bg-white">
