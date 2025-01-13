@@ -30,6 +30,7 @@ export const addNewExpAction = createAsyncThunk(
                     title: expense?.title,
                     description: expense?.description,
                     amount: expense?.amount,
+                    category: expense?.category,
                 },
                 config
             );
@@ -160,6 +161,7 @@ export const updateExpenseAction = createAsyncThunk(
             title: expense?.title,
             description: expense?.description,
             amount: expense?.amount,
+            category: expense?.category
           },
           config
         );

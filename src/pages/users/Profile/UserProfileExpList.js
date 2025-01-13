@@ -20,7 +20,6 @@ const UserProfileExpList = () => {
       <section className="py-6">
         <div className="container-fluid">
           <div className="position-relative border rounded-2">
-            <a className="position-absolute top-0 end-0 mt-4 me-4" href="#"></a>
             <div className="pt-8 px-8 mb-8">
               <h6 className="mb-0 fs-3">Recent Expense transactions</h6>
               <p className="mb-0">

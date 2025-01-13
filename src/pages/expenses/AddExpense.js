@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
@@ -23,7 +23,7 @@ const AddExpense = () => {
   //income
 
   //expense
-  const expenses = useSelector(state => state?.expenses);
+  const expenses = useSelector((state) => state?.expenses);
   const { expLoading, expAppErr, expServerErr, isExpCreated } = expenses;
   //initialize form
   const formik = useFormik({
@@ -31,8 +31,9 @@ const AddExpense = () => {
       title: "",
       description: "",
       amount: "",
+      category: "",
     },
-    onSubmit: values => {
+    onSubmit: (values) => {
       dispatch(addNewExpAction(values));
     },
     validationSchema: formSchema,
@@ -44,20 +45,20 @@ const AddExpense = () => {
     if (isExpCreated) {
       navigate(history, "user-profile-expenses", undefined);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isExpCreated]);
   return (
     <>
       <section className="py-5 bg-danger vh-100">
         <div className="container text-center">
-          <a className="d-inline-block mb-5">
+          <span className="d-inline-block mb-5">
             <img
               className="img-fluid"
               src={moneySVG}
               alt="SVGeXPENSES"
               width="200"
             />
-          </a>
+          </span>
           <div className="row mb-4">
             <div className="col-12 col-md-8 col-lg-5 mx-auto">
               <div className="p-4 shadow-sm rounded bg-white">
@@ -111,6 +112,25 @@ const AddExpense = () => {
                   {/* Err */}
                   <div className="text-danger mb-2">
                     {formik.touched.amount && formik.errors.amount}
+                  </div>
+
+                  <div className="mb-3 input-group">
+                    <select
+                      name="category"
+                      id="category"
+                      className="form-control"
+                      value={formik.values.category}
+                      onBlur={formik.handleBlur("category")}
+                      onChange={formik.handleChange("category")}
+                    >
+                      <option value="groceries">Groceries</option>
+                      <option value="entatainment">Entatainment</option>
+                      <option value="shopping">Shopping</option>
+                      <option value="travel">Travel</option>
+                      <option value="bill">Bill</option>
+                      <option value="food & drinks">Food & Drinks</option>
+                      <option value="other">Other</option>
+                    </select>
                   </div>
                   {expLoading ? (
                     <DisabledButton />
