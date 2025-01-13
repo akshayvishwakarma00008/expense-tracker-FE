@@ -5,8 +5,6 @@ import PublicNavbar from "./Public/PublicNavbar";
 
 const Navbar = () => {
   const users = useSelector(state => state?.users);
-  console.log("users: ", users);
-
   const { userAuth } = users;
   return <>{userAuth ? <PrivateNavbar /> : <PublicNavbar/>}</>;
 };

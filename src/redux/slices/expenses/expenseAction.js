@@ -144,7 +144,6 @@ export const deleteExpenseAction = createAsyncThunk(
 export const updateExpenseAction = createAsyncThunk(
     "expense/update",
     async (expense, { rejectWithValue, getState, dispatch }) => {
-      console.log(expense);
       //get user token
       const user = getState()?.users;
       const { userAuth } = user;

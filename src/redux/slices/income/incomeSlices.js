@@ -129,7 +129,6 @@ export const deleteIncomeAction = createAsyncThunk(
 export const updateIncomeAction = createAsyncThunk(
     "income/update",
     async (income, { rejectWithValue, getState, dispatch }) => {
-        console.log(income);
         //get user token
         const user = getState()?.users;
         const { userAuth } = user;
